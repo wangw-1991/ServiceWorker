@@ -766,6 +766,7 @@ spec: webappsec-referrer-policy; urlPrefix: https://w3c.github.io/webappsec-refe
             1. Let |registrations| be a new [=list=].
             1. [=map/For each=] |scope| → |registration| of [=scope to registration map=]:
                 1. If the [=url/origin=] of the result of [=URL parser|parsing=] |scope| is the [=same origin|same=] as |client|'s [=environment settings object/origin=], then [=append=] |registration| to |registrations|.
+            1. Sort the |registrations| by the [=service worker registration/scope url=] of the [=ServiceWorkerRegistration/service worker registration=] using simple lexicographical order.
             1. [=Queue a task=] on |promise|'s [=relevant settings object=]'s [=responsible event loop=], using the [=DOM manipulation task source=], to run the following steps:
                 1. Let |registrationObjects| be a new [=list=].
                 1. [=list/For each=] |registration| of |registrations|:
